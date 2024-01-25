@@ -1,0 +1,12 @@
+.table{
+    &__header{
+        display: flex;
+        justify-content: space-evenly;
+        h6{
+            font-size: 3rem;
+        }
+        .addButtonTale{
+            height: 3.5rem;
+        }
+    }
+}
