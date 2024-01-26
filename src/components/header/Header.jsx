@@ -34,16 +34,9 @@ const Header = () => {
         <nav className={`navbar navbar-expand-lg bg-body-tertiary ${isNavbarOpen ? 'show' : ''}`}>
             <div className="container-fluid">
                 <h6 className="navbar-brand">Products Database</h6>
-                <button
-                    className="navbar-toggler"
-                    type="button"
-                    data-bs-toggle="collapse"
-                    aria-controls="navbarNav"
-                    data-bs-target="#navbarNav"
-                    aria-expanded="false"
-                    aria-label="Toggle navigation"
-                    onClick={handleToggleClick}
-                >
+                <button className="navbar-toggler" type="button" data-bs-toggle="collapse" aria-controls="navbarNav"
+                    data-bs-target="#navbarNav" aria-expanded="false" aria-label="Toggle navigation"
+                    onClick={handleToggleClick}>
                     <TextCenter />
                 </button>
                 <div className={`collapse navbar-collapse ${isNavbarOpen ? 'show' : ''}`} id="navbarNav">

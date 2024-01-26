@@ -10,7 +10,6 @@ const User = ( {userName} ) => {
         const userToken = localStorage.getItem('UserToken');
         const loggedIn = !!userToken;
         setIsLoggedIn(loggedIn);
-        console.log('Component mounted. Token:', userToken);
     }, []);
 
     const handleLogout = () => {

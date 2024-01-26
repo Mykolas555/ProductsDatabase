@@ -12,13 +12,9 @@ const Home = () => {
                 const response = await getAllDataForHomePage();
                 if (response.status) {
                     setProductData(response.data.data);
-                } else {
-                    console.error('Error:', response.error);
-                }
-            } catch (error) {
-                console.error('Error:', error);
-            }
-        }
+                } else {console.error(response.error);}
+            } catch (error) { console.error(error); }
+        } 
         fetchData();
     }, []);
     

@@ -15,25 +15,17 @@ const Products = () => {
                 if (response.status) {
                     setProductData(response.data.data);
                     setPagesCount(response.data.last_page);
-                } else {
-                    console.error('Error:', response.error);
-                }
-            } catch (error) {
-                console.error('Error:', error);
-            }
+                } else {console.error(response.error);}
+            } catch (error) { console.error(error);}
         };
         fetchData();
     }, [currentPage]);
 
     const handlePageClick = (page) => {
         setCurrentPage(page);
-        window.scrollTo({
-            top: 0,
-            behavior: "smooth"
-        });
+        window.scrollTo({ top: 0, behavior: "smooth" });
     };
 
-    console.log(currentPage)
     return (
         <Container className="mt-3">
             <h2 className="text-center">All Products In Database</h2>

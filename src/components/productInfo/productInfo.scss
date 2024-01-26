@@ -1,0 +1,35 @@
+.products{
+    background-image: linear-gradient(to right, #000000, #070607, #0c0c0e, #0f1113, #111516, #161a1a, #1a1e1e, #1f2321, #272a28, #2e312f, #363836, #3e3f3e);
+    width: 90% !important;
+    margin-top: 5rem;
+    border-radius: 3rem;
+    border: solid 2px ;
+    padding: 1rem;
+    margin-bottom: 3rem;
+    box-shadow: 10px 10px 10px black
+}
+
+.products__row{
+    border-bottom: 2px solid;
+    padding: 1rem;
+    img{
+        width: 15rem;
+        height: auto;
+    }
+    h3{
+        font-size:2rem;
+        color: white;
+    }
+    h4{
+        font-size: 1.5rem;
+        color: white;
+    }
+    p{
+        font-size: 1rem;
+        color: white;
+    }
+}
+
+.products__row:nth-child(4){
+    border-bottom: none;
+}
