@@ -56,7 +56,7 @@ const AddProduct = () => {
                             name='price' value={addProduct.price} onChange={(e) => handleChange(e, 'price')}/>
                     </div>
                     <div className='addProductInput'>
-                        <input type="file" accept=".png, .jpg, .jpeg, .gif, .webp"
+                        <input type="file" accept=".png, .jpg, .jpeg, .gif, .webp" required
                             onChange={(e) => handleChange(e, 'image')}/>
                     </div>
                     <div className='addProductInput'>

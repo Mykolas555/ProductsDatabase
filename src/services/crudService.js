@@ -23,6 +23,7 @@ const postUserProducts = async (addProduct) => {
         formData.append('description', addProduct.description);
         formData.append('price', addProduct.price);
         formData.append('image', addProduct.image);
+        
         const response = await fetch('https://demo-api.ideabridge.lt/api/products', {
             method: 'POST',
             headers: {
@@ -30,12 +31,19 @@ const postUserProducts = async (addProduct) => {
             },
             body: formData,
         });
-        const data = await response.json();
-        return data;
-    } catch (err) {
-        console.log(err);
+
+        if (!response.ok) {
+            const errorData = await response.json();
+            console.error("Error:", errorData);
+        } else {
+            const data = await response.json();
+            return data;
+        }
+    } catch (error) {
+        console.error("An error occurred:", error);
     }
 };
+
 
 
 const deleteUserProduct = async (productId) => {
