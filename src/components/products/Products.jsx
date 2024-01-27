@@ -36,7 +36,7 @@ const Products = () => {
                     </Col>
                 </Row>
             ))}
-            <Row>
+            <Row className='mt-4'>
                 <Col>
                     <nav aria-label="Page navigation example">
                         <ul className="pagination">

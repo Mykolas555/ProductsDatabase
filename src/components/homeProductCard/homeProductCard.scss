@@ -1,0 +1,13 @@
+.card {
+    background-image: linear-gradient(to right, #000000, #070607, #0c0c0e, #0f1113, #111516, #161a1a, #1a1e1e, #1f2321, #272a28, #2e312f, #363836, #3e3f3e);
+    box-shadow: 0 10px 10px black;
+
+    .card-body {
+        padding: 1.25rem;
+        color: white;
+    }
+
+    .card-img {
+        border-radius: 4px 4px 0 0;
+    }
+}

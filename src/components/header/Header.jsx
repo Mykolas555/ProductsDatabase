@@ -51,12 +51,6 @@ const Header = () => {
                                 Products
                             </Link>
                         </li>
-                        <li className="nav-item">
-                            <form class="d-flex headerForm" role="search">
-                                <input class="form-control me-2" type="search" placeholder="Enter product name" aria-label="Search"/>
-                                <button class="btn btn-outline-success" type="submit">Search</button>
-                            </form>
-                        </li>
                         <User userName={userName} />
                     </ul>
                 </div>
