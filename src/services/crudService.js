@@ -23,7 +23,7 @@ const postUserProducts = async (addProduct) => {
         formData.append('description', addProduct.description);
         formData.append('price', addProduct.price);
         formData.append('image', addProduct.image);
-        
+        console.log('FormData before request:', formData);
         const response = await fetch('https://demo-api.ideabridge.lt/api/products', {
             method: 'POST',
             headers: {
@@ -31,16 +31,17 @@ const postUserProducts = async (addProduct) => {
             },
             body: formData,
         });
-
+        const sentData = await response.json()
+        console.log(sentData)
         if (!response.ok) {
             const errorData = await response.json();
-            console.error("Error:", errorData);
+            console.error(errorData);
         } else {
             const data = await response.json();
             return data;
         }
     } catch (error) {
-        console.error("An error occurred:", error);
+        console.error(error);
     }
 };
 
@@ -52,7 +53,6 @@ const deleteUserProduct = async (productId) => {
       const response = await fetch(`https://demo-api.ideabridge.lt/api/products/${productId}`, {
         method: 'DELETE',
         headers: {
-          'Content-Type': 'application/json',
           'Authorization': `Bearer ${userToken}`,
         },
       });
@@ -63,26 +63,27 @@ const deleteUserProduct = async (productId) => {
     }
 };
 
-const updateUserProduct = async (productId, updatedProductData) => {
+const updateUserProduct = async (productId, productData) => {
     try {
         const userToken = localStorage.getItem('UserToken');
-        const formData = new FormData();
-        formData.append('title', updatedProductData.title);
-        formData.append('description', updatedProductData.description);
-        formData.append('price', updatedProductData.price);
-        formData.append('image', updatedProductData.image);
         const response = await fetch(`https://demo-api.ideabridge.lt/api/products/${productId}`, {
             method: 'PUT',
             headers: {
+                'Content-Type': 'application/json',
                 'Authorization': `Bearer ${userToken}`,
             },
-            body: formData,
+            body: JSON.stringify(productData)
         });
-        const updatedProduct = await response.json();
-        return updatedProduct;
-    } catch (err) {
-        console.error(err);
+        if (!response.ok) {
+            const errorData = await response.json();
+            console.error(errorData);
+        } else {
+            const data = await response.json();
+            return data;
+        }
+    } catch (error) {
+        console.error( error);
     }
-};
+}
 
 export { getUserProducts, postUserProducts, deleteUserProduct, updateUserProduct }

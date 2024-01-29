@@ -5,9 +5,11 @@ import './homeProductCard.scss';
 const HomeProductCard = ({ product }) => {
 
     const symbolLengtCheck = (description, maxLength) => {
-        return description.length > maxLength
-            ? description.substring(0, maxLength) + '...'
-            : description;
+        if (description && description.length > maxLength) {
+            return description.substring(0, maxLength) + '...';
+        } else {
+            return description;
+        }
     };
 
     const shortDesc = symbolLengtCheck(product.description, 50);
